@@ -1,0 +1,17 @@
+// import React from 'react';
+
+import { Link } from "react-router";
+import logo from "../../../assets/logo.png"
+
+const Profastlogo = () => {
+    return (
+        <Link to={"/"}>
+            <div className="flex items-end">
+                <img className="mb-2" src={logo} alt="logo" />
+                <p className="text-3xl font-bold -ml-2">Profast</p>
+            </div>
+        </Link>
+    );
+};
+
+export default Profastlogo;
