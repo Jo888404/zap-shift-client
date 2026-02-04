@@ -3,6 +3,7 @@ import React from 'react';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const MyParcels = () => {
   const { user } = useAuth();
@@ -112,7 +113,8 @@ const MyParcels = () => {
                     <td className="flex gap-2">
                       <button className="btn btn-sm btn-info">Details</button>
                       <button onClick={() => handleDelete(parcel._id)} className="btn btn-sm btn-error">Delete</button>
-                      <button className="btn btn-sm btn-success">Pay</button>
+                      
+                      <Link to={`/dashboard/payment/${parcel._id}`}><button  className="btn btn-sm btn-success">Pay</button></Link>
                     </td>
                   </tr>
                 ))}

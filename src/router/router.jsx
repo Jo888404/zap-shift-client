@@ -11,6 +11,14 @@ import PrivateRoute from "../routes/PrivateRoute";
 import ParcelForm from "../pages/ParcelForm/ParcelForm";
 import DashboardLayouts from "../layouts/DashboardLayouts";
 import MyParcels from "../pages/Dashboard/MyParcels/MyParcels";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import BeARider from "../pages/Dashboard/BeARider/BeARider";
+import PendingRiders from "../pages/Dashboard/PendingRiders/PendingRiders";
+// import ActiveRiders from "../pages/Dashboard/AdminHireList/AdminHireList";
+import Services from "../pages/Home/Services/Services";
+import AdminHireList from "../pages/Dashboard/AdminHireList/AdminHireList";
+
 
 
 
@@ -41,6 +49,14 @@ export const router = createBrowserRouter([
         Component: AboutUs
       },
       {
+        path: "/services",
+        Component: Services
+      },
+      {
+        path: "/rider",
+        element: <PrivateRoute><BeARider></BeARider></PrivateRoute>
+      },
+      {
         path: "/addParcel",
         element: <PrivateRoute><ParcelForm></ParcelForm></PrivateRoute>,
         loader: ()=> fetch('/serviceCenters.json').then(res => res.json())
@@ -64,6 +80,8 @@ export const router = createBrowserRouter([
     ]
   },
 
+  // Dashboard 
+
   {
     path: "/dashboard",
     element: <PrivateRoute><DashboardLayouts></DashboardLayouts></PrivateRoute>,
@@ -72,7 +90,26 @@ export const router = createBrowserRouter([
         path: 'myParcels',
         Component: MyParcels
         // element: <PrivateRoute><MyParcels></MyParcels></PrivateRoute>
+      },
+
+      {
+        path: 'payment/:id',
+        Component: Payment
+      },
+
+      {
+        path: 'paymentHistory',
+        Component: PaymentHistory
+      },
+      {
+        path: 'pending-riders',
+        Component: PendingRiders
+      },
+      {
+        path: 'hires',
+        Component: AdminHireList
       }
+
     ]
   }
 ]);

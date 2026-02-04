@@ -45,7 +45,7 @@ const Cart = () => {
 
     return (
         <div className='max-w-6xl mx-auto mt-12'>
-            <h1 className='font-extrabold text-3xl mb-8'>How it Works</h1>
+            <h1 className='font-extrabold text-3xl mb-8'>Why need Challok ?</h1>
             <div className='lg:flex lg:gap-6'>
                 <div
                     {...(enableAOS && {

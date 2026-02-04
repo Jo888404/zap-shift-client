@@ -15,26 +15,27 @@ const Navbar = () => {
         {
             user && <>
                 <li><NavLink to={"/dashboard"}>Dashboard</NavLink></li>
-                <li><NavLink to={"/addParcel"}>Send Parcel</NavLink></li>
+
             </>
         }
+        {/* <li><NavLink to={"/addParcel"}>Send Parcel</NavLink></li> */}
 
 
         <li><NavLink to={"/about"}>About Us</NavLink></li>
-        <li><NavLink to="/pricing">Pricing</NavLink></li>
+        {/* <li><NavLink to="/pricing">Pricing</NavLink></li> */}
         <li><NavLink to="/rider">Be a Rider</NavLink></li>
 
     </div>
 
 
 
-        const handleLogout =()=>{
-            logOut()
+    const handleLogout = () => {
+        logOut()
             .then()
-            .catch(error =>{
+            .catch(error => {
                 console.log(error)
             })
-        }
+    }
 
     return (
         <div className="navbar  shadow-sm bg-white text-black mt-4 rounded">
@@ -59,19 +60,70 @@ const Navbar = () => {
             <div className="navbar-end">
 
 
-            {
-                user ? <Link onClick={handleLogout} className="btn  mr-2 font-extrabold border-none hover:bg-info ">Sign Out</Link>
-                :
-                 <Link to="/login" className="btn  mr-2 font-extrabold border-none hover:bg-info ">Sign In</Link>
-            }
+                {/* {user ? (
+                    <Link
+                        onClick={handleLogout}
+                        className="btn mr-2 font-extrabold border-none hover:bg-info"
+                    >
+                        Sign Out
+                    </Link>
+                ) : (
+                    <>
+                        <Link
+                            to="/login"
+                            className="btn mr-2 font-extrabold border-none hover:bg-info"
+                        >
+                            Sign In
+                        </Link>
 
-               
-              {
+                        <Link
+                            to="/register"
+                            className="btn btn-primary mr-2 font-extrabold border-none hover:bg-info"
+                        >
+                            Sign Up
+                        </Link>
+                    </>
+                )} */}
+
+
+
+                {/* Auth Buttons */}
+                <div className="flex items-center gap-2">
+                    {user ? (
+                        <button
+                            onClick={handleLogout}
+                            className="btn btn-sm md:btn-md font-extrabold border-none hover:bg-info"
+                        >
+                            Sign Out
+                        </button>
+                    ) : (
+                        <>
+                            <Link
+                                to="/login"
+                                className="btn btn-sm md:btn-md font-extrabold border-none hover:bg-info"
+                            >
+                                Sign In
+                            </Link>
+
+                            <Link
+                                to="/register"
+                                className="btn btn-sm md:btn-md btn-primary font-extrabold border-none hover:bg-info"
+                            >
+                                Sign Up
+                            </Link>
+                        </>
+                    )}
+                </div>
+
+
+
+
+                {/* {
                 user ? <Link className="btn bg-[#CAEB66] text-black font-extrabold border-none">Be a rider</Link>
                 :
                 <Link to="/register" className="btn btn-primary mr-2 font-extrabold border-none hover:bg-info ">SignUp</Link>
-              }     
-                
+              }      */}
+
             </div>
 
 
