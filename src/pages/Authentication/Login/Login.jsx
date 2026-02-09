@@ -19,12 +19,21 @@ const Login = () => {
             .then(result => {
                 console.log(result.user)
                 navigate(from);
+                
             })
             .catch(error => {
                 console.error(error)
             })
-           
+
+
+        
+
     }
+
+
+
+
+
 
 
 

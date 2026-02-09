@@ -2,6 +2,9 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import RiderService from "./RiderService";
 
+
+
+
 const Services = () => {
   const axiosSecure = useAxiosSecure();
 
@@ -19,7 +22,17 @@ const Services = () => {
         <span className="loading loading-spinner loading-lg"></span>
       </div>
     );
+
+    
   }
+
+
+
+  
+
+
+
+
 
   return (
     <div className="bg-[#03373D] rounded-2xl py-20">
