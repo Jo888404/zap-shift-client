@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import car from "../../../assets/car.png"
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useTranslation } from 'react-i18next';
 
 const Cart = () => {
 
-
+    const { t } = useTranslation();
     const [enableAOS, setEnableAOS] = useState(false);
 
     useEffect(() => {
@@ -45,7 +46,7 @@ const Cart = () => {
 
     return (
         <div className='max-w-6xl mx-auto mt-12'>
-            <h1 className='font-extrabold text-3xl mb-8'>Why need Challok ?</h1>
+            <h1 className='font-extrabold text-3xl mb-8'>{t("whychallok")}</h1>
             <div className='lg:flex lg:gap-6'>
                 <div
                     {...(enableAOS && {

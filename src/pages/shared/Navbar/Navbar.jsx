@@ -137,39 +137,42 @@ import useAuth from "../../../hooks/useAuth";
 import useAdmin from "../../../hooks/useAdmin";
 import NavbarProfile from "./NavbarProfile";
 import MobileSidebar from "./MobileSidebar";
+import LanguageToggle from "../LanguageToggle/LanguageToggle";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { user } = useAuth();
   const isAdmin = useAdmin();
+  const { t } = useTranslation();
 
   const navItems = (
     <>
       <li>
-        <NavLink to="/services">Services</NavLink>
+        <NavLink to="/services">{t("services")}</NavLink>
       </li>
 
       {user && (
         <li>
-          <NavLink to="/my-orders">My Orders</NavLink>
+          <NavLink to="/my-orders">{t("myorder")}</NavLink>
         </li>
       )}
 
       <li>
-        <NavLink to="/coverage">Coverage</NavLink>
+        <NavLink to="/coverage">{t("coverage")}</NavLink>
       </li>
 
       {user && isAdmin && (
         <li>
-          <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink to="/dashboard">{t("dashboard")}</NavLink>
         </li>
       )}
 
       <li>
-        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/about">{t("about")}</NavLink>
       </li>
 
       <li>
-        <NavLink to="/rider">Be a Driver</NavLink>
+        <NavLink to="/rider">{t("driver")}</NavLink>
       </li>
     </>
   );
@@ -184,9 +187,9 @@ const Navbar = () => {
         {/* 🔥 Mobile Sidebar */}
         <MobileSidebar navItems={navItems} />
 
-        <Link to="/" className="text-xl font-bold">
+        <span className="text-xl font-bold">
           <Profastlogo />
-        </Link>
+        </span>
       </div>
 
       {/* CENTER - Desktop Menu */}
@@ -195,6 +198,18 @@ const Navbar = () => {
           {navItems}
         </ul>
       </div>
+
+
+
+      {/* Language toggle  */}
+
+      <div className="navbar-end flex items-center gap-4">
+  <LanguageToggle />
+</div>
+
+
+
+
 
       {/* RIGHT */}
       <div className="navbar-end">
@@ -207,14 +222,14 @@ const Navbar = () => {
                 to="/login"
                 className="btn btn-sm font-bold"
               >
-                Sign In
+                {t("login")}
               </Link>
 
               <Link
                 to="/register"
                 className="btn btn-sm btn-primary font-bold"
               >
-                Sign Up
+                {t("signup")}
               </Link>
             </>
           )}

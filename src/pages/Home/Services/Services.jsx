@@ -1,12 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import RiderService from "./RiderService";
+import { useTranslation } from "react-i18next";
 
 
 
 
 const Services = () => {
   const axiosSecure = useAxiosSecure();
+  const { t } = useTranslation();
 
   const { data: riders = [], isLoading } = useQuery({
     queryKey: ["riders"],
@@ -37,7 +39,7 @@ const Services = () => {
   return (
     <div className="bg-[#03373D] rounded-2xl py-20">
       <h1 className="text-3xl font-extrabold text-center text-white mb-3">
-        Our Services
+        {t("ourService")}
       </h1>
 
       <p className="text-center text-[#DADADA] mb-10">
