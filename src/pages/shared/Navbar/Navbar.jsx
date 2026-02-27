@@ -178,7 +178,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar  shadow-sm bg-white text-black mt-4 rounded ">
+    <div className="navbar  shadow-sm bg-neutral h-24 text-white mt-4 rounded ">
         {/* navbar shadow-md bg-white dark:bg-gray-800 dark:text-white mt-4 rounded px-4 */}
 
       {/* LEFT */}
@@ -187,7 +187,7 @@ const Navbar = () => {
         {/* 🔥 Mobile Sidebar */}
         <MobileSidebar navItems={navItems} />
 
-        <span className="text-xl font-bold">
+        <span className="mx-auto">
           <Profastlogo />
         </span>
       </div>

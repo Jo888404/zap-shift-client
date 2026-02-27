@@ -14,7 +14,7 @@ const LanguageToggle = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-100"
+      className="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-500 cursor-pointer"
     >
       {lang === "en" ? "🇧🇩 বাংলা" : "🇬🇧 English"}
     </button>

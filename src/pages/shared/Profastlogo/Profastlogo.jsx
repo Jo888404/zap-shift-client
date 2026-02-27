@@ -2,15 +2,16 @@
 
 import { Link } from "react-router";
 import logo from "../../../assets/logo.png"
-// import logo1 from "../../../assets/Challok-logos.png"
+import logos from "../../../assets/banner/cha.png"
 
 const Profastlogo = () => {
     return (
         <Link to={"/"}>
             <div className="flex items-end">
-                <img className="mb-2" src={logo} alt="logo" />
-                {/* <img className="mb-2 w-32 h-32" src={logo1} alt="logo" /> */}
-                <p className="text-3xl font-bold -ml-2">Challok</p>
+                <img className="mb-20 -mr-14" src={logo} alt="logo" />
+            
+                <img className="h-44" src={logos} alt="logo" />
+                {/* <p className="text-3xl font-bold -ml-2">Challok</p> */}
             </div>
         </Link>
     );

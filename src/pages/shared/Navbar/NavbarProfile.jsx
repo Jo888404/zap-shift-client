@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaSignOutAlt, FaUserCircle, FaMoon, FaSun } from "react-icons/fa";
 import useAuth from "../../../hooks/useAuth";
+import { NavLink } from "react-router";
 
 
 const NavbarProfile = ({ user }) => {
@@ -109,7 +110,7 @@ const NavbarProfile = ({ user }) => {
             {/* Menu */}
             <div className="p-4 space-y-3 text-sm">
 
-              <MenuItem label="My Order" />
+              <NavLink to="my-orders"><MenuItem label="My Order" /></NavLink>
               {/* <MenuItem label="Bookmark" />
               <MenuItem label="Helpdesk" badge="New*" />
               <MenuItem label="Student Analytics" />
@@ -129,7 +130,7 @@ const NavbarProfile = ({ user }) => {
 
               {/* Logout */}
               <div className="border-t border-purple-400/20 pt-3">
-                <button onClick={handleLogout} className="flex items-center gap-2 text-pink-500 hover:text-pink-600 transition">
+                <button onClick={handleLogout} className="flex items-center cursor-pointer gap-2 text-pink-500 hover:text-pink-600 transition">
                   <FaSignOutAlt />
                   Logout
                 </button>

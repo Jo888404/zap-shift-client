@@ -5,18 +5,18 @@ import Profastlogo from "../Profastlogo/Profastlogo";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-horizontal footer-center bg-neutral text-neutral-content p-10">
+        <footer className="footer footer-horizontal footer-center bg-neutral text-neutral-content ">
             <aside>
                <Profastlogo></Profastlogo>
-                <p className="">
+                <p className="-mt-12">
                     Enjoy fast, reliable parcel delivery with real-time tracking and zero hassle. From personal packages to 
                     <br />
                     business shipments — we deliver on time, every time.
                 </p>
-                <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
+                <p>Copyright © {new Date().getFullYear()} - All right reserved by <span className="font-bold">Jothi Nokrek.</span></p>
             </aside>
             <nav>
-                <div className="grid grid-flow-col gap-4">
+                <div className="grid grid-flow-col gap-4 mb-8">
                     <a>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
